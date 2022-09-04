@@ -1,0 +1,98 @@
+{
+  "folders": [
+    {
+      "id": "hH04Daml",
+      "name": "Default",
+      "defaultLanguage": "typescript",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "createdAt": 1662228813888,
+      "updatedAt": 1662228813888,
+      "index": 0
+    },
+    {
+      "name": "cpp",
+      "parentId": null,
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "Jy_-UXyQ",
+      "createdAt": 1662229416472,
+      "updatedAt": 1662229422120,
+      "index": 1
+    },
+    {
+      "name": "sort",
+      "parentId": "WxNUE5tT",
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "0ITNsK_v",
+      "createdAt": 1662278606870,
+      "updatedAt": 1662278656117,
+      "index": 0
+    },
+    {
+      "name": "search",
+      "parentId": "WxNUE5tT",
+      "isOpen": false,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "uFtsCWNY",
+      "createdAt": 1662278624506,
+      "updatedAt": 1662278661226,
+      "index": 1
+    },
+    {
+      "name": "Algorithms",
+      "parentId": null,
+      "isOpen": true,
+      "isSystem": false,
+      "defaultLanguage": "plain_text",
+      "id": "WxNUE5tT",
+      "createdAt": 1662278566909,
+      "updatedAt": 1662278574976,
+      "index": 2
+    }
+  ],
+  "snippets": [
+    {
+      "isDeleted": false,
+      "isFavorites": false,
+      "folderId": "Jy_-UXyQ",
+      "tagsIds": [],
+      "description": null,
+      "name": "变量类型查看",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "c_cpp",
+          "value": "#include <cstdlib>\n#include <iostream>\n#include <string>\n#if defined(__GNUC__) || defined(__clang__)\n#include <cxxabi.h>\n#endif\n\ntemplate <class T>\nstd::string cpp_type_name()\n{\n    const char* name = typeid(T).name();\n#if defined(__GNUC__) || defined(__clang__)\n    int status;\n    char* p = abi::__cxa_demangle(name, 0, 0, &status);\n    std::string s = p;\n    std::free(p);\n#else\n    std::string s = name;\n#endif\n    if (std::is_const_v<std::remove_reference_t<T>>)\n        s += \" const\";\n    if (std::is_volatile_v<std::remove_reference_t<T>>)\n        s += \" volatile\";\n    if (std::is_lvalue_reference_v<T>)\n        s += \" &\";\n    if (std::is_rvalue_reference_v<T>)\n        s += \" &&\";\n    return s;\n}\n\n#define SHOW(T) std::cout << cpp_type_name<T>() << std::endl;\n\nint main()\n{\n    SHOW(int);\n    SHOW(const int&);\n    typedef const float *const &MyType;\n    SHOW(MyType);\n}"
+        }
+      ],
+      "id": "2p5GMpvS",
+      "createdAt": 1662229437564,
+      "updatedAt": 1662229465570
+    },
+    {
+      "isDeleted": true,
+      "isFavorites": false,
+      "folderId": "WxNUE5tT",
+      "tagsIds": [],
+      "description": null,
+      "name": "冒泡排序",
+      "content": [
+        {
+          "label": "Fragment 1",
+          "language": "plain_text",
+          "value": ""
+        }
+      ],
+      "id": "-sMg7CeV",
+      "createdAt": 1662278589087,
+      "updatedAt": 1662278605619
+    }
+  ],
+  "tags": []
+}
